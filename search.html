@@ -1,34 +1,74 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="search.css"/>
     <script src="search.js"></script>
     <title>myBookstore</title>
 </head>
-<body>
-    <input type="text" id="bookName" placeholder="Search.." size="40">
-    <input type="button" value="Search" size="20" onclick="searchBook()"/>
-    <div id="divResult"></div>
-</body>
-</html> -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- <link rel="stylesheet" href="search.css"/> -->
-    <script src="search.js"></script>
-    <title>myBookstore</title>
-</head>
+
+<style>
+    h1 {
+        text-align: center;
+        font-size: 70px;
+    }
+    .search {
+        border: 0px solid #f1f1f1;
+        margin: 30px;
+        width: 100%;
+        height: 200px;
+        text-align: center;
+        font-size: 100px;
+    }
+    input, button {
+        font-size: 40px;
+        border-radius: 25px;
+        padding: 20px;
+        outline: 0;
+    }
+    button{
+        background-color: #4CAF50;
+        color: white;
+    }
+    button:hover {
+        opacity: 0.8;
+    }
+    .result {
+        font-size: 30px;
+    }
+    table {
+        width: 100%;
+    }
+    th {
+        background-color: #4CAF50;;
+        color: white;
+        text-align: center;
+    }
+    tr:nth-child(odd) {
+    background-color: #dddddd;
+    }
+    .postButton {
+        text-align: center;
+        padding: 50px;
+    }
+</style>
+
+
 <body>
+    <h1>MyBookStore</h1>
     <div class="search">
-        <div id = "search_div">
-            <input type="text" id="bookName" placeholder="Please input search content">
-            <input type="button" value="Search" onclick="searchBook()"/>
-            <div id="divResult"></div>
-        </div>
-
+        <input type="text" id="bookName" placeholder="Search..." size=50px>
+        <button type="button" onclick="searchBook()"><i class="fa fa-search"></i></button>
     </div>
-    <a href="sellBook.html">Post Your Book</a>
+
+    <div class="result">
+        <div id="divResult">
+    </div>
+
+    <div class="postButton">
+        <button onclick="window.location.href='sellBook.html'">Post Your Book</button>
+    </div>
 
 </body>
 </html>

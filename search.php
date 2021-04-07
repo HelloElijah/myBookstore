@@ -21,16 +21,29 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
+        echo "<table>
+            <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Location</th>
+            <th>Email</th>
+            </tr>";
+
         while ($row = $result->fetch_assoc()) {
-            $sInfo = "Book: ".$row['BookName']."<br />"."Author: ".
-            $row['Author']."<br />"."Price: ".$row['Price'].
-            "Seller Location: ".$row['SellerLocation']."</a>";
+            echo "<tr>";
+            echo "<td>".$row['BookName']."</td>";
+            echo "<td>".$row['Author']."</td>";
+            echo "<td>".$row['Price']."</td>";
+            echo "<td>".$row['SellerLocation']."</td>";
+            echo "<td>".$row['Email']."</td>";
+            echo "</tr>";
         }
+        echo "</table>";
     } else {
         echo  "User with Name: $bookName doesn't exist.";
     }
 
     $conn->close();
-    echo $sInfo;
 ?>
 
