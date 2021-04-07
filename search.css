@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+   }
+   body{
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(at center,
+     #3498db,#2980b9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   div.search{
+    height: 40px;
+    width: 500px;  
+   }
+   .search_div{
+    width: 100%;
+    height: 100%;
+   }

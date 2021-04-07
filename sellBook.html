@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="sellBook.css"/>
+<script src="sellBook.js"></script>
+</head>
+
+<body>
+
+<h1>Add the Book You want to Sell</h1>
+
+<form action="" method="get" onsubmit="sellBookRequest(); return false">
+  <div class="container">
+    <label><b>Title</b></label>
+    <input type="text" placeholder="Enter Title of Book" name="title" id="title">
+
+    <label><b>Author</b></label>
+    <input type="text" placeholder="Enter Author of Book" name="author" id="author">
+
+    <label><b>Location</b></label>
+    <input type="text" placeholder="Enter Your Location(City)" name="location" id="location">
+
+    <label><b>Price</b></label>
+    <input type="text" placeholder="Enter the Price for sell" name="price" id="price">
+
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Enter the Email for contact" name="email" id="email">
+
+    <div id="divPostInfo" class="errorInfo"></div>
+    
+    <button type="submit">Post</button>
+  </div>
+</form>
+
+</body>
+</html>
