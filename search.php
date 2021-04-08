@@ -19,31 +19,63 @@
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
     $result = $conn->query($sql);
-
+    $n=0;
     if ($result->num_rows > 0) {
-        echo "<table>
-            <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Price</th>
-            <th>Location</th>
-            <th>Email</th>
-            </tr>";
+        // echo "<table>
+        //     <tr>
+        //     <th>Title</th>
+        //     <th>Author</th>
+        //     <th>Price</th>
+        //     <th>Location</th>
+        //     <th>Email</th>
+        //     </tr>";
 
         while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>".$row['BookName']."</td>";
-            echo "<td>".$row['Author']."</td>";
-            echo "<td>".$row['Price']."</td>";
-            echo "<td>".$row['SellerLocation']."</td>";
-            echo "<td>".$row['Email']."</td>";
-            echo "</tr>";
+            // echo "<tr>";
+            // echo "<td>".$row['BookName']."</td>";
+            // echo "<td>".$row['Author']."</td>";
+            // echo "<td>".$row['Price']."</td>";
+            // echo "<td>".$row['SellerLocation']."</td>";
+            // echo "<td>".$row['Email']."</td>";
+            // echo "</tr>";
+            if ($result->num_rows % 2==0){
+                echo "<div class='middlebox'>";
+                echo "<img src='https://www.designsponge.com/wp-content/uploads/2011/07/final.jpeg' width='93' height='95' alt='photo 1' />";
+                echo "<p>".$row['BookName']."</p>";
+                echo "<p class='price'><b>Price:</b> <b>".$row['Price']."</b></p>";
+                echo "<p>".$row['Author']."</p>";
+                echo "<p>".$row['SellerLocation']."</p>";
+                echo "<p>".$row['Email']."</p>";
+                echo "<p><button>Add to Favorite</button></p>";
+                echo "</div>";
+            }
+            elseif ($result->num_rows % 3==0){
+                echo "<div class='rightbox'>";
+                echo "<img src='https://www.designsponge.com/wp-content/uploads/2011/07/final.jpeg' width='93' height='95' alt='photo 1' />";
+                echo "<p>".$row['BookName']."</p>";
+                echo "<p class='price'><b>Price:</b> <b>".$row['Price']."</b></p>";
+                echo "<p>".$row['Author']."</p>";
+                echo "<p>".$row['SellerLocation']."</p>";
+                echo "<p>".$row['Email']."</p>";
+                echo "<p><button>Add to Favorite</button></p>";
+                echo "</div>";
+            }
+            else{
+                echo "<div class='leftbox'>";
+                echo "<img src='https://www.designsponge.com/wp-content/uploads/2011/07/final.jpeg' width='93' height='95' alt='photo 1' />";
+                echo "<p>".$row['BookName']."</p>";
+                echo "<p class='price'><b>Price:</b> <b>".$row['Price']."</b></p>";
+                echo "<p>".$row['Author']."</p>";
+                echo "<p>".$row['SellerLocation']."</p>";
+                echo "<p>".$row['Email']."</p>";
+                echo "<p><button>Add to Favorite</button></p>";
+                echo "</div>";
+            }
+            
         }
-        echo "</table>";
+        // echo "</table>";
     } else {
-        echo  "User with Name: $bookName doesn't exist.";
+        echo  "Book with Name: $bookName doesn't exist.";
     }
 
     $conn->close();
-?>
-

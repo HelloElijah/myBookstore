@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="search.css"/>
+    <link rel="stylesheet" href="search.css" />
     <script src="search.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     <title>myBookstore</title>
 </head>
-
-
 <style>
     h1 {
         text-align: center;
         font-size: 70px;
     }
+
     .search {
         border: 0px solid #f1f1f1;
         margin: 30px;
@@ -21,42 +24,136 @@
         text-align: center;
         font-size: 100px;
     }
-    input, button {
+
+    input,
+    button {
         font-size: 40px;
         border-radius: 25px;
         padding: 20px;
         outline: 0;
     }
-    button{
+
+    button {
         background-color: #4CAF50;
         color: white;
     }
+
     button:hover {
         opacity: 0.8;
     }
+
     .result {
+        
         font-size: 30px;
+        width: 900px;
+        margin:0 auto;
     }
+
     table {
         width: 100%;
     }
+
     th {
-        background-color: #4CAF50;;
+        background-color: #4CAF50;
+        ;
         color: white;
         text-align: center;
     }
+
     tr:nth-child(odd) {
-    background-color: #dddddd;
+        background-color: #dddddd;
     }
+
     .postButton {
         text-align: center;
         padding: 50px;
+    }
+
+    .leftbox {
+        float: left;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
+
+    .rightbox {
+        float: right;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
+    .middlebox {
+        float: right;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
+
+    .rightbox button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .rightbox button:hover {
+        opacity: 0.7;
+    }
+    
+    .leftbox button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .leftbox button:hover {
+        opacity: 0.7;
+    }
+
+    .middlebox button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .middlebox button:hover {
+        opacity: 0.7;
     }
 </style>
 
 
 <body>
     <h1>MyBookStore</h1>
+    <div class="postButton">
+        <button onclick="window.location.href='sellBook.html'">Post Your Book</button>
+    </div>
     <div class="search">
         <input type="text" id="bookName" placeholder="Search..." size=50px>
         <button type="button" onclick="searchBook()"><i class="fa fa-search"></i></button>
@@ -64,11 +161,12 @@
 
     <div class="result">
         <div id="divResult">
+        </div>
     </div>
 
-    <div class="postButton">
-        <button onclick="window.location.href='sellBook.html'">Post Your Book</button>
-    </div>
+
+
 
 </body>
+
 </html>
