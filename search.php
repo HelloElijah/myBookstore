@@ -40,7 +40,7 @@
             // echo "</tr>";
             if ($result->num_rows % 2==0){
                 echo "<div class='middlebox'>";
-                echo "<img src='https://www.designsponge.com/wp-content/uploads/2011/07/final.jpeg' width='93' height='95' alt='photo 1' />";
+                echo "<img src=".$row['bookURL']."width='93' height='95' alt='photo 1' />";
                 echo "<p>".$row['BookName']."</p>";
                 echo "<p class='price'><b>Price:</b> <b>".$row['Price']."</b></p>";
                 echo "<p>".$row['Author']."</p>";
@@ -51,8 +51,7 @@
             }
             elseif ($result->num_rows % 3==0){
                 echo "<div class='rightbox'>";
-                echo "<img src='https://www.designsponge.com/wp-content/uploads/2011/07/final.jpeg' width='93' height='95' alt='photo 1' />";
-                echo "<p>".$row['BookName']."</p>";
+                echo "<img src=".$row['bookURL']."width='93' height='95' alt='photo 1' />";                echo "<p>".$row['BookName']."</p>";
                 echo "<p class='price'><b>Price:</b> <b>".$row['Price']."</b></p>";
                 echo "<p>".$row['Author']."</p>";
                 echo "<p>".$row['SellerLocation']."</p>";
@@ -62,8 +61,7 @@
             }
             else{
                 echo "<div class='leftbox'>";
-                echo "<img src='https://www.designsponge.com/wp-content/uploads/2011/07/final.jpeg' width='93' height='95' alt='photo 1' />";
-                echo "<p>".$row['BookName']."</p>";
+                echo "<img src=".$row['bookURL']."width='93' height='95' alt='photo 1' />";                echo "<p>".$row['BookName']."</p>";
                 echo "<p class='price'><b>Price:</b> <b>".$row['Price']."</b></p>";
                 echo "<p>".$row['Author']."</p>";
                 echo "<p>".$row['SellerLocation']."</p>";

@@ -8,7 +8,7 @@
     $location = $_GET["location"];
     $price = $_GET["price"];
     $email = $_GET["email"];
-
+    $image = $_GET["image"];
     //Check whether input is valid
     if ($title == ''){
         echo "You Need to Enter the Title of Book";
@@ -28,10 +28,13 @@
     else if ($email == ''){
         echo "You Need to Enter the Email for Contact";
     }
+    else if($image == ''){
+        $image='https://www.designsponge.com/wp-content/uploads/2011/07/final.jpeg';
+    }
     else {
         //create the SQL query string
-        $sql = "Insert into bookstore(BookName,Author,SellerLocation,Price,Email) ".
-                " values ('$title','$author','$location','$price','$email')";
+        $sql = "Insert into bookstore(BookName,Author,SellerLocation,Price,Email,bookURL,category,NOF) ".
+                " values ('$title','$author','$location','$price','$email','$image',1,0)";
 
         //database information
         $servername = "localhost";

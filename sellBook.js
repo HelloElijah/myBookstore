@@ -4,10 +4,11 @@ function sellBookRequest() {
     var location = document.getElementById("location").value;
     var price = document.getElementById("price").value;
     var email = document.getElementById("email").value;
+    var image = document.getElementById("image").value;
 
     var xhttp = new XMLHttpRequest();
     xhttp.open("get", "sellBook.php?title=" + title + "&author=" + author 
-    + "&location=" + location + "&price=" + price + "&email=" + email);
+    + "&location=" + location + "&price=" + price + "&email=" + email + "&image" + image);
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState == 4) {
             if (xhttp.status == 200) {
