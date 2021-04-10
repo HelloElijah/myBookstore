@@ -9,7 +9,7 @@ CREATE TABLE BookStore (
   SellerLocation varchar(255) NOT NULL default '',
   Price int(255) NOT NULL default 0,
   Email varchar(255) NOT NULL default '',
-  bookURL VARCHAR(2083) default 'https://www.designsponge.com/wp-content/uploads/2011/07/final.jpeg',
+  bookURL VARCHAR(255) default 'https://www.designsponge.com/wp-content/uploads/2011/07/final.jpeg',
   category int(255) NOT NULL  default 1 CHECK (category>=1 AND category<=5),
   NOF int(255) NOT NULL default 0,
   PRIMARY KEY (Id)

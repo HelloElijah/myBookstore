@@ -9,6 +9,9 @@
     $price = $_GET["price"];
     $email = $_GET["email"];
     $image = $_GET["image"];
+    $category = $_GET["category"];
+    $NOF =0;
+    echo $category;
     //Check whether input is valid
     if ($title == ''){
         echo "You Need to Enter the Title of Book";
@@ -34,7 +37,7 @@
     else {
         //create the SQL query string
         $sql = "Insert into bookstore(BookName,Author,SellerLocation,Price,Email,bookURL,category,NOF) ".
-                " values ('$title','$author','$location','$price','$email','$image',1,0)";
+                " values ('$title','$author','$location','$price','$email','$image','$category','$NOF')";
 
         //database information
         $servername = "localhost";
